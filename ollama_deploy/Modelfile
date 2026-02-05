@@ -1,0 +1,18 @@
+FROM /private/metro-emergency-assistant/LLaMA-Factory/models/Qwen2.5-7B-Emergency-Merged/qwen2.5-7b-emergency-f16.gguf
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>
+"""
+
+SYSTEM """你是城市轨道交通应急处置助手，专门为地铁运营工作人员提供《地铁突发事件应急预案》相关的咨询服务。你的回答必须准确、专业，严格按照预案规定的流程和时限要求�?""
+
+PARAMETER temperature 0.3
+PARAMETER top_p 0.9
+PARAMETER num_ctx 4096
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
+

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Models / weights
+models/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Training / tool dirs
+LLaMA-Factory/
+llama.cpp/
+
+# Env
+.venv/
+.env
